@@ -17,17 +17,21 @@ Author: lode.vandevenne@gmail.com (Lode Vandevenne)
 Author: jyrki.alakuijala@gmail.com (Jyrki Alakuijala)
 */
 
-#ifndef ZOPFLI_ZLIB_H_
-#define ZOPFLI_ZLIB_H_
+#ifndef ZOPFLI_GZIP_H_
+#define ZOPFLI_GZIP_H_
 
 /*
-Functions to compress according to the Zlib specification.
+Functions to compress according to the Gzip specification.
 */
 
 #include "zopfli.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*
-Compresses according to the zlib specification and append the compressed
+Compresses according to the gzip specification and append the compressed
 result to the output.
 
 options: global program options
@@ -35,8 +39,12 @@ out: pointer to the dynamic output array to which the result is appended. Must
   be freed after use.
 outsize: pointer to the dynamic output array size.
 */
-void ZopfliZlibCompress(const ZopfliOptions* options,
+void ZopfliGzipCompress(const ZopfliOptions* options,
                         const unsigned char* in, size_t insize,
                         unsigned char** out, size_t* outsize);
 
-#endif  /* ZOPFLI_ZLIB_H_ */
+#ifdef __cplusplus
+}  // extern "C"
+#endif
+
+#endif  /* ZOPFLI_GZIP_H_ */

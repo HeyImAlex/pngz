@@ -30,11 +30,11 @@ $(LIBPNG): $(ZLIB)
 	cp lib/libpng-1.6.20/.libs/libpng16.a $(LIBPNG)
 
 $(ZOPFLI):
-	cd lib/zopfli-1.0.0;make clean;make;
-	cp lib/zopfli-1.0.0/libzopfli.a $(ZOPFLI)
+	cd lib/zopfli-1.0.1;make clean;make;
+	cp lib/zopfli-1.0.1/libzopfli.a $(ZOPFLI)
 
 build/%.o: src/%.c
-	$(CC) -iquote./lib/libpng-1.6.20 -iquote./lib/zopfli-1.0.0/src/zopfli \
+	$(CC) -iquote./lib/libpng-1.6.20 -iquote./lib/zopfli-1.0.1/src/zopfli \
 	-iquote./lib/zlib-1.2.8 -c -o $@ $< $(CFLAGS)
 
 .PHONY: distclean clean
