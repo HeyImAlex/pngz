@@ -124,6 +124,6 @@ static void print_results(const pngz_t *png) {
     else {
         float improvement = 100 - (float)best/original*100;
         printf("byte decrease:      %30dB\r\n", best-original);
-        printf("percet decrease:    %30.2f%%\r\n", improvement);
+        printf("percent decrease:   %30.2f%%\r\n", improvement);
     }
 }
